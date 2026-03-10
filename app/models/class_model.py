@@ -1,17 +1,12 @@
-from sqlalchemy import Boolean, Column, Date, DateTime, Integer, String, func, text
+from sqlalchemy import Boolean, Column, DateTime, Integer, String, func, text
 from app.database import Base
 
-class Student(Base):
-    __tablename__ = "students"
+
+class Class(Base):
+    __tablename__ = "classes"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
-    dob = Column(Date)
-    father_name = Column(String)
-    mother_name = Column(String)
-    blood_group = Column(String)
-    phone = Column(String)
-    address = Column(String)
     is_active = Column(Boolean,server_default=text("true"))
     created_at = Column(DateTime,server_default=func.now())
     updated_at = Column(DateTime,server_default=func.now(),onupdate=func.now())

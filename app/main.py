@@ -2,7 +2,10 @@ from fastapi import FastAPI
 from app.database import Base, engine
 from app.routes.student_route import student_router
 from app.models import student
-from app.models import user
+from app.models import class_model
+from app.models import division
+from app.models import academic_year
+from app.models import student_enrollment
 
 app = FastAPI()
 
